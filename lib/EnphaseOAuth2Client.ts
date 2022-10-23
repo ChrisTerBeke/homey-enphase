@@ -31,7 +31,7 @@ export class EnphaseOAuth2Client extends OAuth2Client {
     static TOKEN_URL = 'https://api.enphaseenergy.com/oauth/token'
     static SCOPES = ['read', 'write']
 
-    async onGetTokenByCode({ code }: { code: string }): Promise<void> {
+    async onGetTokenByCode({ code }: { code: string }): Promise<typeof OAuth2Token> {
         const basicAuth = Buffer.from(`${Homey.env.CLIENT_ID}:${Homey.env.CLIENT_SECRET}`).toString('base64')
         const body = new URLSearchParams()
         body.append('grant_type', 'authorization_code')
@@ -39,13 +39,30 @@ export class EnphaseOAuth2Client extends OAuth2Client {
         body.append('redirect_uri', this._redirectUrl)
         const response = await fetch(this._tokenUrl, {
             method: 'POST',
-            headers: {
-                'Authorization': `Basic ${basicAuth}`
-            },
+            headers: { 'Authorization': `Basic ${basicAuth}` },
             body: body,
         })
         if (!response.ok) return this.onHandleGetTokenByCodeError({ response })
         this._token = await this.onHandleGetTokenByCodeResponse({ response })
+        return this.getToken()
+    }
+
+    async onRefreshToken(): Promise<typeof OAuth2Token> {
+        const token = this.getToken();
+        if (!token) throw new OAuth2Error('Missing Token')
+        if (!token.isRefreshable()) throw new OAuth2Error('Token cannot be refreshed')
+        const basicAuth = Buffer.from(`${Homey.env.CLIENT_ID}:${Homey.env.CLIENT_SECRET}`).toString('base64')
+        const body = new URLSearchParams()
+        body.append('grant_type', 'refresh_token')
+        body.append('refresh_token', token.refresh_token)
+        const response = await fetch(this._tokenUrl, {
+            method: 'POST',
+            headers: { 'Authorization': `Basic ${basicAuth}` },
+            body: body,
+        })
+        if (!response.ok) return this.save() && this.emit('expired') && this.onHandleRefreshTokenError({ response })
+        this._token = await this.onHandleRefreshTokenResponse({ response })
+        this.save()
         return this.getToken()
     }
 
