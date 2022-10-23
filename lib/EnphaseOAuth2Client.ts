@@ -72,12 +72,6 @@ export class EnphaseOAuth2Client extends OAuth2Client {
         })
     }
 
-    async getSystem(systemId: string): Promise<System> {
-        return await this.get({
-            path: `/systems/${systemId}?key=${Homey.env.API_KEY}`,
-        })
-    }
-
     async getSystemSummary(systemId: string): Promise<SystemSummaryResponse> {
         return await this.get({
             path: `/systems/${systemId}/summary?key=${Homey.env.API_KEY}`,
