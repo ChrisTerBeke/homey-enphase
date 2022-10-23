@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="600px" height="600px" viewBox="0 0 600 600" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>drivers/YOUR_DRIVER_ID/assets/icon</title>
-    <g id="/drivers/YOUR_DRIVER_ID/assets/icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <title>drivers/enphase_driver/assets/icon</title>
+    <g id="/drivers/enphase_driver/assets/icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="Group" transform="translate(24.000000, 136.000000)">
             <path d="M534.997153,0 C545.979499,0 551,7.85351646 551,13.1935659 C551,18.5336153 551,300.299753 550.686219,313.806937 C550.372437,327 540.645216,327 540.645216,327 C540.645216,327 38.2813212,327 17.2579727,327 C0.627562642,327 0,316.948142 0,312.236334 C0,307.210405 0,14.7641687 0,14.7641687 C0,-0.313617962 12.2374715,0 15.3752847,0 C15.3752847,0 518.366743,0 534.997153,0 Z" id="Path" fill="#000000" fill-rule="nonzero"></path>
             <polygon id="Path" fill="#FFFFFF" fill-rule="nonzero" points="521 145 511.27027 145 497 166.254237 506.72973 166.254237 498.945946 183 520.351351 158.525424 511.27027 158.525424"></polygon>
