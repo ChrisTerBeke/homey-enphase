@@ -30,7 +30,7 @@
   "brandColor": "#f37321",
   "drivers": [
     {
-      "id": "enphase-envoy-gateway",
+      "id": "enphase_driver",
       "name": {
         "en": "Enphase Envoy"
       },
@@ -47,8 +47,8 @@
         "cloud"
       ],
       "images": {
-        "small": "/drivers/enphase-envoy-gateway/assets/images/small.png",
-        "large": "/drivers/enphase-envoy-gateway/assets/images/large.png"
+        "small": "/drivers/enphase_driver/assets/images/small.png",
+        "large": "/drivers/enphase_driver/assets/images/large.png"
       },
       "pair": [
         {
