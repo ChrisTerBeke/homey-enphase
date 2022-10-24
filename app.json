@@ -37,7 +37,9 @@
       "class": "solarpanel",
       "capabilities": [
         "meter_power",
-        "measure_power"
+        "measure_power",
+        "modules",
+        "alarm_status"
       ],
       "platforms": [
         "local",
@@ -77,5 +79,29 @@
         }
       ]
     }
-  ]
+  ],
+  "capabilities": {
+    "alarm_status": {
+      "type": "boolean",
+      "title": {
+        "en": "Inverter status"
+      },
+      "uiComponent": null,
+      "getable": true,
+      "setable": false
+    },
+    "modules": {
+      "type": "number",
+      "title": {
+        "en": "Inverter modules"
+      },
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": false,
+      "min": 1,
+      "max": 1000,
+      "step": 1,
+      "decimals": 0
+    }
+  }
 }

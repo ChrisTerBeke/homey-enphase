@@ -1,0 +1,13 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Inverter modules"
+  },
+  "uiComponent": "sensor",
+  "getable": true,
+  "setable": false,
+  "min": 1,
+  "max": 1000,
+  "step": 1,
+  "decimals": 0
+}

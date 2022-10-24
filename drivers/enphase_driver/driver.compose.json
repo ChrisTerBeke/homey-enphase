@@ -6,7 +6,9 @@
   "class": "solarpanel",
   "capabilities": [
     "meter_power",
-    "measure_power"
+    "measure_power",
+    "modules",
+    "alarm_status"
   ],
   "platforms": [
     "local",

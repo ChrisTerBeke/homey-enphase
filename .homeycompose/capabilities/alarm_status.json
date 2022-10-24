@@ -1,0 +1,9 @@
+{
+    "type": "boolean",
+    "title": {
+      "en": "Inverter status"
+    },
+    "uiComponent": null,
+    "getable": true,
+    "setable": false
+  }

@@ -14,8 +14,10 @@ class EnphaseEnvoyDevice extends OAuth2Device {
 
 	private async _updateSolarProduction(systemId: string): Promise<void> {
 		const systemSummary = await this.oAuth2Client.getSystemSummary(systemId)
-		this.setCapabilityValue('meter_power', systemSummary.energy_today / 1000)
+		this.setCapabilityValue('meter_power', systemSummary.energy_lifetime / 1000)
 		this.setCapabilityValue('measure_power', systemSummary.current_power)
+		this.setCapabilityValue('modules', systemSummary.modules)
+		this.setCapabilityValue('alarm_status', systemSummary.status !== 'normal')
 	}
 
 	async onOAuth2Deleted(): Promise<void> {
