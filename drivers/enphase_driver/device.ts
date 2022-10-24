@@ -1,6 +1,6 @@
 const { OAuth2Device } = require('homey-oauth2app')
 
-const POLL_INTERVAL_MS = 1000 * 60 * 15 // enphase envoy updates every 15 minutes
+const POLL_INTERVAL_MS = 1000 * 60 * 5
 
 class EnphaseEnvoyDevice extends OAuth2Device {
 
@@ -14,8 +14,8 @@ class EnphaseEnvoyDevice extends OAuth2Device {
 
 	private async _updateSolarProduction(systemId: string): Promise<void> {
 		const systemSummary = await this.oAuth2Client.getSystemSummary(systemId)
-		this.setCapabilityValue('meter_power', systemSummary.energy_today / 1000);
-		this.setCapabilityValue('measure_power', systemSummary.current_power);
+		this.setCapabilityValue('meter_power', systemSummary.energy_today / 1000)
+		this.setCapabilityValue('measure_power', systemSummary.current_power)
 	}
 
 	async onOAuth2Deleted(): Promise<void> {
