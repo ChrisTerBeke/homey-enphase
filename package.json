@@ -15,7 +15,6 @@
     "typescript": "^4.8.4"
   },
   "dependencies": {
-    "homey-log": "^2.1.0",
     "homey-oauth2app": "^3.5.0"
   }
 }
