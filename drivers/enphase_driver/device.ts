@@ -6,7 +6,7 @@ class EnphaseEnvoyDevice extends OAuth2Device {
 
 	async onOAuth2Init(): Promise<void> {
 		const { systemId } = this.getData()
-		this._syncInterval = setInterval(await this._updateSolarProduction.bind(this, systemId), POLL_INTERVAL_MS)
+		this._syncInterval = setInterval(this._updateSolarProduction.bind(this, systemId), POLL_INTERVAL_MS)
 		await this._updateSolarProduction(systemId)
 	}
 
