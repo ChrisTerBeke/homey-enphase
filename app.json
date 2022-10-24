@@ -36,8 +36,9 @@
       },
       "class": "solarpanel",
       "capabilities": [
-        "meter_power",
         "measure_power",
+        "meter_power",
+        "meter_power_today",
         "modules",
         "alarm_status"
       ],
@@ -89,6 +90,23 @@
       "uiComponent": null,
       "getable": true,
       "setable": false
+    },
+    "meter_power_today": {
+      "type": "number",
+      "title": {
+        "en": "Power today",
+        "nl": "Energie vandaag"
+      },
+      "uiComponent": "sensor",
+      "units": {
+        "en": "kWh"
+      },
+      "getable": true,
+      "setable": false,
+      "min": 0,
+      "step": 0.01,
+      "decimals": 2,
+      "insights": true
     },
     "modules": {
       "type": "number",

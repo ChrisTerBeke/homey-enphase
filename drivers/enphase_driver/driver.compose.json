@@ -5,8 +5,9 @@
   },
   "class": "solarpanel",
   "capabilities": [
-    "meter_power",
     "measure_power",
+    "meter_power",
+    "meter_power_today",
     "modules",
     "alarm_status"
   ],
