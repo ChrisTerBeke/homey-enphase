@@ -15,10 +15,6 @@ class EnphaseEnvoyDevice extends OAuth2Device {
 		this.setCapabilityValue('meter_power', systemSummary.energy_today / 1000);
 		this.setCapabilityValue('measure_power', systemSummary.current_power);
 	}
-
-	async onOAuth2Deleted(): Promise<void> {
-		// Clean up here
-	}
 }
 
 module.exports = EnphaseEnvoyDevice
