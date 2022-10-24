@@ -8,7 +8,7 @@ class EnphaseApp extends OAuth2App {
   static OAUTH2_MULTI_SESSION = true
 
   async onOAuth2Init() {
-    this.homeyLog = new Log({ homey: this.homey });
+    this.homeyLog = new Log({ homey: this.homey })
   }
 }
 
