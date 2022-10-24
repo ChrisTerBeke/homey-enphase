@@ -1,6 +1,6 @@
 const { OAuth2Device } = require('homey-oauth2app')
 
-const POLL_INTERVAL_MS = 1000 * 60 // 60 seconds
+const POLL_INTERVAL_MS = 1000 * 60 * 15 // enphase envoy updates every 15 minutes
 
 class EnphaseEnvoyDevice extends OAuth2Device {
 
