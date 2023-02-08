@@ -3,8 +3,10 @@
   "version": "0.0.1",
   "main": "app.ts",
   "scripts": {
-    "build": "tsc",
-    "lint": "eslint --ext .js,.ts --ignore-path .gitignore ."
+    "start": "homey app run",
+    "build": "homey app build",
+    "lint": "eslint --ext .js,.ts --ignore-path .gitignore .",
+    "test": "homey app validate"
   },
   "devDependencies": {
     "@tsconfig/node12": "^1.0.11",
