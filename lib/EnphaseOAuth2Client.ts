@@ -24,6 +24,60 @@ export type SystemSummaryResponse = {
     last_report_at: number
 }
 
+export type SystemDevicesResponse = {
+    system_id: number
+    total_devices: number
+    devices: {
+        micros: Micro[]
+        gateways: Gateway[]
+        q_relays: Relay[]
+    }
+}
+
+export type Micro = {
+    id: number
+    last_report_at: number
+    name: string
+    serial_number: string
+    part_number: string
+    sku: string
+    model: string
+    status: string
+    active: boolean
+}
+
+export type Gateway = {
+    id: number
+    last_report_at: number
+    name: string
+    serial_number: string
+    part_number: string
+    emu_sw_version: string
+    sku: string
+    model: string
+    status: string
+    active: boolean
+    cellular_modem: {
+        imei: string
+        part_num: string
+        sku: string
+        plan_start_date: number
+        plan_end_date: number
+    }
+}
+
+export type Relay = {
+    id: number
+    last_report_at: number
+    name: string
+    serial_number: string
+    part_number: string
+    sku: string
+    model: string
+    status: string
+    active: boolean
+}
+
 export class EnphaseOAuth2Client extends OAuth2Client {
 
     static API_URL = 'https://api.enphaseenergy.com/api/v4'
@@ -75,6 +129,12 @@ export class EnphaseOAuth2Client extends OAuth2Client {
     async getSystemSummary(systemId: string): Promise<SystemSummaryResponse> {
         return await this.get({
             path: `/systems/${systemId}/summary?key=${Homey.env.API_KEY}`,
+        })
+    }
+
+    async getSystemDevices(systemId: string): Promise<SystemDevicesResponse> {
+        return await this.get({
+            path: `/systems/${systemId}/devices?key=${Homey.env.API_KEY}`,
         })
     }
 }

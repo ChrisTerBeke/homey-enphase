@@ -1,3 +1,4 @@
+// @ts-ignore 80005 homey-oauth2app does not have type declarations
 const { OAuth2Device } = require('homey-oauth2app')
 
 // Enphase Cloud data is updated every 15 minutes by Envoy
