@@ -28,6 +28,12 @@
     "email": "contact+homey@christerbeke.com"
   },
   "brandColor": "#f37321",
+  "source": "https://github.com/ChrisTerBeke/homey-enphase",
+  "support": "https://github.com/ChrisTerBeke/homey-enphase/issues",
+  "homepage": "https://github.com/ChrisTerBeke/homey-enphase",
+  "bugs": {
+    "url": "https://github.com/ChrisTerBeke/homey-enphase/issues"
+  },
   "drivers": [
     {
       "id": "enphase_driver",
