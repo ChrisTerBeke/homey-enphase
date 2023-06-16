@@ -1,6 +1,8 @@
+// @ts-ignore 80005 homey-oauth2app does not have type declarations
 const { OAuth2Device } = require('homey-oauth2app')
 
-const POLL_INTERVAL_MS = 1000 * 60 * 5
+// Enphase Cloud data is updated every 15 minutes by Envoy
+const POLL_INTERVAL_MS = 1000 * 60 * 15
 
 class EnphaseEnvoyDevice extends OAuth2Device {
 

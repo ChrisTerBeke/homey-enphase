@@ -1,3 +1,7 @@
+import sourceMapSupport from 'source-map-support'
+sourceMapSupport.install()
+
+// @ts-ignore 80005 homey-oauth2app does not have type declarations
 const { OAuth2App } = require('homey-oauth2app')
 import { EnphaseOAuth2Client } from './lib/EnphaseOAuth2Client'
 
