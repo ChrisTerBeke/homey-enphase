@@ -84,7 +84,8 @@
           "id": "login_oauth2",
           "template": "login_oauth2"
         }
-      ]
+      ],
+      "energy": {}
     }
   ],
   "capabilities": {
